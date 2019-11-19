@@ -16,4 +16,15 @@ public class Player_Bomb_Move : MonoBehaviour
             GetComponent<Collider>().enabled = false;
         }
     }
+
+    private void OnTriggerEnter(Collider collision)
+    {
+        // 부딛히는 collision을 가진 객체의 태그가 "Enemy"일 경우
+        if (collision.CompareTag("Enemy"))
+        {
+            Debug.Log("적 기체와 충돌");
+            GetComponent<Collider>().enabled = false;
+        }
+    }
+
 }
