@@ -13,7 +13,7 @@ public class Player_Bomb_Move : MonoBehaviour
         if (transform.position.y >= DestroyYPos)
         {
             // 폭탄을 제거
-            Destroy(gameObject);
+            GetComponent<Collider>().enabled = false;
         }
     }
 }

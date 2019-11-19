@@ -13,7 +13,7 @@ public class Player_Missile_Move : MonoBehaviour
         if (transform.position.y >= DestroyYPos)
         {
             // 미사일을 제거
-            Destroy(gameObject);
+            GetComponent<Collider>().enabled = false;
         }
     }
 }
