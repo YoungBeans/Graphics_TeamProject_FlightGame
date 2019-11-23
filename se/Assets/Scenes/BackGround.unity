@@ -282,6 +282,19 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 7, y: 5, z: 10}
   m_Center: {x: 0, y: -0.000013887886, z: 0.000002622605}
+--- !u!114 &949080305
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 949080300}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: dc58acb0ed771c649bd590d953ee8d9e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  HP: 30
 --- !u!1001 &1186403320
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -349,6 +362,21 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 3244717047530195492, guid: f3e3b64a743a3844e919be850b4be886,
+        type: 3}
+      propertyPath: m_LocalScale.x
+      value: 10
+      objectReference: {fileID: 0}
+    - target: {fileID: 3244717047530195492, guid: f3e3b64a743a3844e919be850b4be886,
+        type: 3}
+      propertyPath: m_LocalScale.y
+      value: 10
+      objectReference: {fileID: 0}
+    - target: {fileID: 3244717047530195492, guid: f3e3b64a743a3844e919be850b4be886,
+        type: 3}
+      propertyPath: m_LocalScale.z
+      value: 10
+      objectReference: {fileID: 0}
     - target: {fileID: 4416301709460801713, guid: f3e3b64a743a3844e919be850b4be886,
         type: 3}
       propertyPath: m_LocalPosition.y
@@ -364,6 +392,16 @@ PrefabInstance:
       propertyPath: m_Materials.Array.data[0]
       value: 
       objectReference: {fileID: 2100000, guid: e0172530608c3604ab9cf1589dba1490, type: 2}
+    - target: {fileID: 4416272680950345097, guid: f3e3b64a743a3844e919be850b4be886,
+        type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4416272680950345097, guid: f3e3b64a743a3844e919be850b4be886,
+        type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: f3e3b64a743a3844e919be850b4be886, type: 3}
 --- !u!1001 &1439641164
@@ -375,7 +413,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 1970447681998018, guid: 4d54efa43b03b1845b929768cf25e790, type: 3}
       propertyPath: m_Name
-      value: StarSparrow5
+      value: Enemy
       objectReference: {fileID: 0}
     - target: {fileID: 1970447681998018, guid: 4d54efa43b03b1845b929768cf25e790, type: 3}
       propertyPath: m_TagString

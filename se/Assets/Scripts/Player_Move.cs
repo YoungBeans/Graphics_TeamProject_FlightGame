@@ -11,6 +11,7 @@ public class Player_Move : MonoBehaviour
     {
         // 매 프레임마다 메소드 호출
         Move();
+        MoveClamp();    // 제한 메소드 추가
     }
 
     // 움직이는 기능을 하는 메소드
@@ -28,11 +29,26 @@ public class Player_Move : MonoBehaviour
         }
         if (Input.GetKey(KeyCode.RightArrow))  // → 방향키를 누를 때
         {
-            transform.Translate(Vector2.right * Speed * Time.deltaTime);
+            transform.Translate(Vector3.right * Speed * Time.deltaTime);
         }
         if (Input.GetKey(KeyCode.LeftArrow))  // ← 방향키를 누를 때
         {
-            transform.Translate(Vector2.left * Speed * Time.deltaTime);
+            transform.Translate(Vector3.left * Speed * Time.deltaTime);
         }
     }
+
+    private void MoveClamp()
+    {
+        //캐릭터의 월드 좌표를 뷰포트 좌표계로 변환해준다.
+        Vector3 viewPos = Camera.main.WorldToViewportPoint(transform.position); 
+
+        viewPos.x = Mathf.Clamp01(viewPos.x); //x값을 0이상, 1이하로 제한한다.
+        viewPos.y = Mathf.Clamp01(viewPos.y); //y값을 0이상, 1이하로 제한한다.
+
+        //다시 월드 좌표로 변환한다.
+        Vector3 worldPos = Camera.main.ViewportToWorldPoint(viewPos);
+        //좌표를 적용한다.
+        transform.position = worldPos;
+    }
+    
 }
