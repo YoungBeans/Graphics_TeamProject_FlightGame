@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
-public class sceneChange : MonoBehaviour
+public class changeToPlayScene : MonoBehaviour
 {
     // Start is called before the first frame update
     void Start()
@@ -14,10 +14,15 @@ public class sceneChange : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (Input.GetMouseButtonDown(0))
+        if (Input.GetKeyUp("space"))
         {
-            SceneManager.LoadScene("chosePlane");
+            SceneManager.LoadScene("playGame");
         }
     }
 
+    public void ChangeToPlayScene() 
+    {
+
+        SceneManager.LoadScene("playGame");
+    }
 }
