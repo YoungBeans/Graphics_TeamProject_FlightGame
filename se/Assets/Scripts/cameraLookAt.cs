@@ -26,14 +26,14 @@ public class cameraLookAt : MonoBehaviour
             }
         }
 
-        if (Input.GetKey(KeyCode.RightArrow) == true)
+        if (Input.GetKeyUp(KeyCode.RightArrow) == true)
         {
             camArr[t].enabled = false;
             camArr[(t + 1) % 3].enabled = true;
             camArr[(t + 2) % 3].enabled = false;
         }
 
-        if (Input.GetKey(KeyCode.LeftArrow) == true)
+        if (Input.GetKeyUp(KeyCode.LeftArrow) == true)
         {
             camArr[t].enabled = false;
             camArr[(t + 1) % 3].enabled = false;

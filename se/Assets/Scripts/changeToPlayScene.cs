@@ -14,11 +14,15 @@ public class changeToPlayScene : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        
+        if (Input.GetKeyUp("space"))
+        {
+            SceneManager.LoadScene("playGame");
+        }
     }
 
     public void ChangeToPlayScene() 
     {
+
         SceneManager.LoadScene("playGame");
     }
 }
