@@ -29,48 +29,67 @@ public class ExplosionMat : MonoBehaviour {
 	int useoctaves = 4;
 	public int _quality = 2;
 	int usequality = 2;
-	
-	// Use this for initialization
-	void Start () {
+
+    float timeSpan;  //경과 시간을 갖는 변수
+    float checkTime;  // 특정 시간을 갖는 변수
+                      // Use this for initialization
+    void Start () {
         GetComponent<Renderer>().material = new Material(ExplosionMaterial);
 		UpdateShaderProperties();
-	}
-	
-	// Update is called once per frame
-	void Update () {
-		if (doUpdate) {
-			Material rsm = GetComponent<Renderer>().sharedMaterial;
-			float minscale = Mathf.Min(transform.lossyScale.x, Mathf.Min(transform.lossyScale.y, transform.lossyScale.z));
-			// If anything has changed, update that property.
-			if (minscale != _radius) {
-				_radius = minscale;
-				rsm.SetFloat("_Radius", _radius/2.03f - 2);
-			}
-			if (useheat != _heat) {
-				useheat = _heat;
-				rsm.SetFloat("_Heat", _heat);
-			}
-			if (usealpha != _alpha) {
-				usealpha = _alpha;
-				rsm.SetFloat("_Alpha", _alpha);
-			}
-			if (usescroll != _scrollSpeed) {
-				usescroll = _scrollSpeed;
-				rsm.SetFloat("_ScrollSpeed", _scrollSpeed);
-			}
-			if (usefreq != _frequency) {
-				usefreq = _frequency;
-				rsm.SetFloat("_Frequency", _frequency);
-			}
-			if (usescatter != _scattering || useoctaves != _octaves || usequality != _quality) {
-				usescatter = _scattering;
-				useoctaves = _octaves;
-				usequality = _quality;
-				SetShaderKeywords();
-			}
-		}
-	}
-	
+        timeSpan = 0.0f;
+        checkTime = 1.5f;  // 특정시간을 지정
+    }
+
+    // Update is called once per frame
+    void Update()
+    {
+
+
+        if (doUpdate)
+        {
+            Material rsm = GetComponent<Renderer>().sharedMaterial;
+            float minscale = Mathf.Min(transform.lossyScale.x, Mathf.Min(transform.lossyScale.y, transform.lossyScale.z));
+            // If anything has changed, update that property.
+            if (minscale != _radius)
+            {
+                _radius = minscale;
+                rsm.SetFloat("_Radius", _radius / 2.03f - 2);
+            }
+            if (useheat != _heat)
+            {
+                useheat = _heat;
+                rsm.SetFloat("_Heat", _heat);
+            }
+            if (usealpha != _alpha)
+            {
+                usealpha = _alpha;
+                rsm.SetFloat("_Alpha", _alpha);
+            }
+            if (usescroll != _scrollSpeed)
+            {
+                usescroll = _scrollSpeed;
+                rsm.SetFloat("_ScrollSpeed", _scrollSpeed);
+            }
+            if (usefreq != _frequency)
+            {
+                usefreq = _frequency;
+                rsm.SetFloat("_Frequency", _frequency);
+            }
+            if (usescatter != _scattering || useoctaves != _octaves || usequality != _quality)
+            {
+                usescatter = _scattering;
+                useoctaves = _octaves;
+                usequality = _quality;
+                SetShaderKeywords();
+            }
+        }
+        timeSpan += Time.deltaTime;  // 경과 시간을 계속 등록
+        if (timeSpan > checkTime)  // 경과 시간이 특정 시간이 보다 커졋을 경우
+        {
+            Destroy(gameObject);
+            timeSpan = 0;
+        }
+    }
 	public void UpdateShaderProperties() {
 		Material rsm = GetComponent<Renderer>().sharedMaterial;
 		rsm.SetTexture("_RampTex", _ramp);

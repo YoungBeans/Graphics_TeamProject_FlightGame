@@ -28,11 +28,11 @@ public class destroyDown : MonoBehaviour
             if (gameObject.transform.position.y > 30f)
             {
                 Destroy(gameObject);
-                Instantiate(ParticleFXExplosion, this.transform.position, Quaternion.identity); //폭발 이펙트를 생성합니다
             }
         if (other.CompareTag("Player"))
         {
             Debug.Log("기체 파괴");
+            Instantiate(ParticleFXExplosion, this.transform.position, Quaternion.identity); //폭발 이펙트를 생성합니다
             Destroy(gameObject);
         }
     }

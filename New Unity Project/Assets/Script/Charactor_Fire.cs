@@ -10,6 +10,7 @@ public class Charactor_Fire : MonoBehaviour
     public Transform MissileLocation;       // 적의 미사일이 발사되는 위치
     public int MissileMaximumPool;          // 적의 미사일 오브젝트가 생성되는 최대 개수
     public float FireRateTime;              // 적의 미사일이 발사되는 속도
+    public GameObject ParticleFXExplosion;
 
     private GameObject[] Missiles;          // 미사일 오브젝트를 생성하여 저장할 배열
     private MemoryPool MPool;               // 미사일 오브젝트를 관리할 메모리풀
@@ -64,6 +65,8 @@ public class Charactor_Fire : MonoBehaviour
             }
             // 자기 자신을 비활성화 한다.
             gameObject.SetActive(false);
+            Instantiate(ParticleFXExplosion, this.transform.position, Quaternion.identity); //폭발 이펙트를 생성합니다
+            Destroy(gameObject);
         }
     }
 

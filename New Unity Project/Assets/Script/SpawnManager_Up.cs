@@ -24,19 +24,25 @@ public class SpawnManager_Up : MonoBehaviour
 
     float spawnTimer = 0f;
 
-
+    float timeSpan;  //경과 시간을 갖는 변수
+    float checkTime;  // 특정 시간을 갖는 변수
 
     // Use this for initialization
 
     void Start()
     {
-
+        timeSpan = 0.0f;
+        checkTime = 40f;  // 특정시간을 지정
 
     }
 
     void CreateEnemy() // 적이 나오는 지점을 카메라의 월드좌표로 정의한다
 
     {
+
+
+
+
         if (isSpawn == true)
 
         {
@@ -47,17 +53,25 @@ public class SpawnManager_Up : MonoBehaviour
 
                 int rand = Random.Range(0, positions.Length);
 
+                int num = Random.Range(0, 2);
 
-                float randomX = Random.Range(-20f, 20f);
+                float randomX1 = Random.Range(8f, 20f);
 
+                float randomX2 = Random.Range(-20f, -8f);
 
                 float randomY = -55f;
 
 
                 float viewPosZ = -830f;
 
-                Instantiate(enemy, new Vector3(randomX, randomY, viewPosZ), Quaternion.identity);
-
+                if (num == 0)
+                {
+                    Instantiate(enemy, new Vector3(randomX1, randomY, viewPosZ), Quaternion.identity);
+                }
+                else if (num == 1)
+                {
+                    Instantiate(enemy, new Vector3(randomX2, randomY, viewPosZ), Quaternion.identity);
+                }
 
                 spawnTimer = 0f;
 
@@ -68,6 +82,7 @@ public class SpawnManager_Up : MonoBehaviour
             spawnTimer += Time.deltaTime;
 
         }
+
 
 
     }
@@ -82,8 +97,11 @@ public class SpawnManager_Up : MonoBehaviour
 
     {
 
-        CreateEnemy();
-
+        timeSpan += Time.deltaTime;  // 경과 시간을 계속 등록
+        if (timeSpan > checkTime)  // 경과 시간이 특정 시간이 보다 커졋을 경우
+        {
+            CreateEnemy();
+        }
     }
 
 

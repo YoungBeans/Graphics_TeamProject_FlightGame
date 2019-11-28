@@ -4,6 +4,7 @@ using UnityEngine;
 
 public class destroyRight : MonoBehaviour
 {
+    public GameObject ParticleFXExplosion;
     // Start is called before the first frame update
     void Start()
     {
@@ -30,6 +31,7 @@ public class destroyRight : MonoBehaviour
         if (other.CompareTag("Player"))
         {
             Debug.Log("기체 파괴");
+            Instantiate(ParticleFXExplosion, this.transform.position, Quaternion.identity); //폭발 이펙트를 생성합니다
             Destroy(gameObject);
         }
     }

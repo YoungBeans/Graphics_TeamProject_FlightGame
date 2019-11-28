@@ -68,10 +68,7 @@
     <Compile Include="Assets\Script\destroyRight.cs" />
     <Compile Include="Assets\Script\destroyUp.cs" />
     <Compile Include="Assets\Script\MemoryPool.cs" />
-    <Compile Include="Assets\Script\MissileDown.cs" />
-    <Compile Include="Assets\Script\MissileLeft.cs" />
-    <Compile Include="Assets\Script\MissileRight.cs" />
-    <Compile Include="Assets\Script\MissileUp.cs" />
+    <Compile Include="Assets\Script\MissileMove.cs" />
     <Compile Include="Assets\Script\Move_Down.cs" />
     <Compile Include="Assets\Script\Move_Left.cs" />
     <Compile Include="Assets\Script\Move_Right.cs" />
