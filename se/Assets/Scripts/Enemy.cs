@@ -6,7 +6,9 @@ public class Enemy : MonoBehaviour
 {
     public int HP;
     private Enemy_Data enemyData;
-
+    GameObject item_levelup;
+    GameObject item_new;
+    Vector3 positionValue;
     // Use this for initialization
     void Start()
     {
@@ -19,12 +21,19 @@ public class Enemy : MonoBehaviour
         if (enemyData.getHP() <= 0)
         {
             Debug.Log("파괴!!!!!");
+            item_drop();
             Destroy(gameObject);
             // 현재 적의 오브젝트를 메모리풀링으로 만들지 않았기 때문에
             // Destroy로 처리합니다.
         }
     }
-
+    void item_drop()
+    {
+        item_levelup = Resources.Load("usingAssets/Item_levelup") as GameObject;
+        positionValue = new Vector3(gameObject.transform.position.x, gameObject.transform.position.y);
+        positionValue.z = -90;
+        item_new = (GameObject)Instantiate(item_levelup, positionValue, Quaternion.LookRotation(gameObject.transform.forward));
+    }
     private void OnTriggerEnter(Collider collision)
     {
         // 부딛히는 collision을 가진 객체의 태그가 "Player Missile"일 경우
