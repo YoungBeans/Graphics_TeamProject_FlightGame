@@ -34,7 +34,7 @@ public class SpawnManager_Left : MonoBehaviour
     void Start()
     {
         timeSpan = 0.0f;
-        checkTime = 30f;  // 특정시간을 지정
+        checkTime = 20f;  // 특정시간을 지정
 
     }
 

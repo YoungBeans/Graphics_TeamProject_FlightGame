@@ -20,7 +20,7 @@ public class SpawnManager_Down : MonoBehaviour
 
 
 
-    public float spawnDelay = 5f;
+    public float spawnDelay = 3f;
 
     float spawnTimer = 0f;
 
@@ -51,7 +51,7 @@ public class SpawnManager_Down : MonoBehaviour
                 float randomX = Random.Range(-400f, 400f);
 
 
-                float randomY = 1000f;
+                float randomY = 900f;
 
 
                 float viewPosZ = -100f;

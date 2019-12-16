@@ -95,6 +95,7 @@
     <Compile Include="Assets\Scripts\Item_new.cs" />
     <Compile Include="Assets\Scripts\MemoryPool.cs" />
     <Compile Include="Assets\Scripts\Player_Bomb_Move.cs" />
+    <Compile Include="Assets\Scripts\Player_destroy.cs" />
     <Compile Include="Assets\Scripts\Player_Fire.cs" />
     <Compile Include="Assets\Scripts\Player_Fire2.cs" />
     <Compile Include="Assets\Scripts\Player_Missile_Move.cs" />
