@@ -94,6 +94,7 @@
      <Compile Include="Assets\Scripts\Player_Fire2.cs" />
      <Compile Include="Assets\Scripts\Player_Missile_Move.cs" />
      <Compile Include="Assets\Scripts\Player_Move.cs" />
+     <Compile Include="Assets\Scripts\spaceBar_Blink.cs" />
      <Compile Include="Assets\Scripts\Timer.cs" />
      <Compile Include="Assets\SoftEffects\Scripts\CGHolder.cs" />
      <Compile Include="Assets\SoftEffects\Scripts\ClassExtensions.cs" />
