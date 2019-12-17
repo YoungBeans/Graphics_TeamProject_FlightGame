@@ -10,6 +10,8 @@ public class Player_destroy : MonoBehaviour
     bool isDie = false;
     bool isUnBeatTime = false;
     // Start is called before the first frame update
+
+
     void Start()
     {
         nowHealth = maxHealth;
@@ -55,7 +57,16 @@ public class Player_destroy : MonoBehaviour
 
     private void OnGUI()
     {
-        GUILayout.BeginArea(new Rect(0, 0, Screen.width, Screen.height));
+        //스타일
+
+        GUIStyle style = new GUIStyle();
+
+        //폰트크기
+
+        style.fontSize = 100;
+        style.normal.textColor = Color.white;
+
+        GUILayout.BeginArea(new Rect(30, 30 , Screen.width, Screen.height));
         GUILayout.BeginVertical();
         GUILayout.Space(10);
         GUILayout.BeginHorizontal();
@@ -64,8 +75,7 @@ public class Player_destroy : MonoBehaviour
         string heart = "";
         for (int i = 0; i < nowHealth; i++)
             heart += "♥";
-        GUILayout.Label(heart);
-
+        GUILayout.Label(heart,style);
         GUILayout.FlexibleSpace();
         GUILayout.EndHorizontal();
         GUILayout.FlexibleSpace();
