@@ -112,6 +112,25 @@ NavMeshSettings:
     debug:
       m_Flags: 0
   m_NavMeshData: {fileID: 0}
+--- !u!1 &116151255 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 7281361137499691773, guid: f3e3b64a743a3844e919be850b4be886,
+    type: 3}
+  m_PrefabInstance: {fileID: 1186403320}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &116151264
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 116151255}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5c3b2fa3ca0cbcf42af84ab525c00083, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  ParticleFXExplosion: {fileID: 100000, guid: 9473bf090aaa04164967cdceab413088, type: 3}
 --- !u!1 &170076733
 GameObject:
   m_ObjectHideFlags: 0
@@ -217,7 +236,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   enemy: {fileID: 8560456455545232737, guid: cf6c42b63fa33e14ea2cc0f6205b5e60, type: 3}
   isSpawn: 1
-  spawnDelay: 5
+  spawnDelay: 4
 --- !u!114 &480047118
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -233,7 +252,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   enemy: {fileID: 7748991228551709707, guid: 5761b7bf3626f71489357725596375a0, type: 3}
   isSpawn: 1
-  spawnDelay: 10
+  spawnDelay: 5
 --- !u!114 &480047119
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -265,7 +284,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   enemy: {fileID: 4127586241151165398, guid: bda5535813311684db5c576fb619db03, type: 3}
   isSpawn: 1
-  spawnDelay: 5
+  spawnDelay: 3
 --- !u!4 &480047121
 Transform:
   m_ObjectHideFlags: 0
@@ -374,6 +393,21 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: SpawnManager
+      objectReference: {fileID: 0}
+    - target: {fileID: 8983266585494586625, guid: 119e7d0ecb226ba43b5de2fa06e9bc80,
+        type: 3}
+      propertyPath: spawnDelay
+      value: 4
+      objectReference: {fileID: 0}
+    - target: {fileID: 8983266585494586627, guid: 119e7d0ecb226ba43b5de2fa06e9bc80,
+        type: 3}
+      propertyPath: spawnDelay
+      value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 8983266585494586637, guid: 119e7d0ecb226ba43b5de2fa06e9bc80,
+        type: 3}
+      propertyPath: spawnDelay
+      value: 3
       objectReference: {fileID: 0}
     - target: {fileID: 8983266585494586626, guid: 119e7d0ecb226ba43b5de2fa06e9bc80,
         type: 3}
