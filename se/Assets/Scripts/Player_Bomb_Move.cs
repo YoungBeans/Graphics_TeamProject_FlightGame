@@ -4,6 +4,7 @@ public class Player_Bomb_Move : MonoBehaviour
 {
     public float MoveSpeed;     // 미사일이 날라가는 속도
     public float DestroyYPos;   // 미사일이 사라지는 지점
+    public GameObject ParticleFXExplosion; // 폭발 이펙트
 
     void Update()
     {
@@ -12,8 +13,10 @@ public class Player_Bomb_Move : MonoBehaviour
         // 만약에 폭탄의 위치가 DestroyYPos를 넘어서면
         if (transform.position.y >= DestroyYPos)
         {
-            // 폭탄을 제거
-            GetComponent<Collider>().enabled = false;
+            // 폭탄을 제거 (메모리풀)
+            //GetComponent<Collider>().enabled = false;
+            //오브젝트 삭제
+            Destroy(gameObject);
         }
     }
 
@@ -23,8 +26,11 @@ public class Player_Bomb_Move : MonoBehaviour
         if (collision.CompareTag("Enemy"))
         {
             Debug.Log("적 기체와 충돌");
-            GetComponent<Collider>().enabled = false;
+            // 폭탄을 제거 (메모리풀)
+            //GetComponent<Collider>().enabled = false;
+            //오브젝트 삭제
+            Destroy(gameObject);
+            Instantiate(ParticleFXExplosion, this.transform.position, Quaternion.identity); //폭발 이펙트를 생성합니다
         }
     }
-
 }

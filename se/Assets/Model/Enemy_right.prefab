@@ -5744,7 +5744,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2732532f1e024f54ab4cda753693fb6a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  ParticleFXExplosion: {fileID: 100000, guid: 9473bf090aaa04164967cdceab413088, type: 3}
+  ParticleFXExplosion: {fileID: 1845955007268882, guid: 67a684e320da6e7439421a07e3fa265c,
+    type: 3}
 --- !u!1 &7867836893361718057
 GameObject:
   m_ObjectHideFlags: 0

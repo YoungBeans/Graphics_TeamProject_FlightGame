@@ -108,6 +108,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   MoveSpeed: 200
   DestroyYPos: 1080
+  ParticleFXExplosion: {fileID: 1000011797152326, guid: acf39d9f4addf294d93fa56fa373961b,
+    type: 3}
 --- !u!54 &54584185392314986
 Rigidbody:
   m_ObjectHideFlags: 0

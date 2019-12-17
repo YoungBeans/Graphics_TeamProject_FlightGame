@@ -113,7 +113,8 @@ MonoBehaviour:
   MissileLocation: {fileID: 2126654051785343420}
   MissileMaximumPool: 10
   FireRateTime: 3
-  ParticleFXExplosion: {fileID: 0}
+  ParticleFXExplosion: {fileID: 1845955007268882, guid: 67a684e320da6e7439421a07e3fa265c,
+    type: 3}
 --- !u!114 &2103554367249225693
 MonoBehaviour:
   m_ObjectHideFlags: 0
