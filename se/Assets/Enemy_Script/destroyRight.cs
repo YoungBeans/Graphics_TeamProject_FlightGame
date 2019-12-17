@@ -33,6 +33,7 @@ public class destroyRight : MonoBehaviour
         {
             Debug.Log("기체 파괴");
             Instantiate(ParticleFXExplosion, this.transform.position, Quaternion.identity); //폭발 이펙트를 생성합니다
+            scoreManager.score += 200;
             Destroy(gameObject);
         }
     }
