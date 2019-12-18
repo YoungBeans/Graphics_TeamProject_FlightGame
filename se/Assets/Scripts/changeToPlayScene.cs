@@ -5,24 +5,42 @@ using UnityEngine.SceneManagement;
 
 public class changeToPlayScene : MonoBehaviour
 {
-    // Start is called before the first frame update
+    public Camera[] camArr;
+
     void Start()
     {
-        
+
     }
 
     // Update is called once per frame
     void Update()
     {
+        int t = 1;
+        for (int i = 0; i < 3; i++)
+        {
+            if (camArr[i].enabled == true)
+            {
+                t = i;
+                break;
+            }
+        }
+
         if (Input.GetKeyUp("space"))
         {
-            SceneManager.LoadScene("playGame");
+            switch (t)
+            {
+                case 0:
+                    SceneManager.LoadScene("playGameWhite");
+                    break;
+                case 1:
+                    SceneManager.LoadScene("playGameRed");
+                    break;
+                case 2:
+                    SceneManager.LoadScene("playGameBlack");
+                    break;
+                default:
+                    break;
+            }
         }
-    }
-
-    public void ChangeToPlayScene() 
-    {
-
-        SceneManager.LoadScene("playGame");
     }
 }

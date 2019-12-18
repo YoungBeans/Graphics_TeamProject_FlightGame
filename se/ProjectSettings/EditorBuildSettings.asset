@@ -12,6 +12,12 @@ EditorBuildSettings:
     path: Assets/Scenes/chosePlane.unity
     guid: f13d10e3bfcd94448a0b6f7708308c44
   - enabled: 1
-    path: Assets/Scenes/playGame.unity
+    path: Assets/Scenes/playGameWhite.unity
     guid: cf71ad8ffc0e92343a8f3b08c4812ceb
+  - enabled: 1
+    path: Assets/Scenes/playGameBlack.unity
+    guid: aa32642dbadfe654889e3d20fcd1e288
+  - enabled: 1
+    path: Assets/Scenes/playGameRed.unity
+    guid: 15e1f0e35bb83404d9bb3ff958f3b9a1
   m_configObjects: {}
