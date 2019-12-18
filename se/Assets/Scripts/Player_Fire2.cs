@@ -8,19 +8,26 @@ public class Player_Fire2 : MonoBehaviour
     public Transform BombLocation;   // 폭탄이 발사될 위치
     public float FireDelay;             // 폭탄 발사 속도(미사일이 날라가는 속도x)
     private bool FireState;             // 폭탄 발사 속도를 제어할 변수
-
-    public int BombMaxPool;          // 메모리 풀에 저장할 미사일 개수
     public int count;
+    public int BombMaxPool;          // 메모리 풀에 저장할 미사일 개수
     private MemoryPool MPool;           // 메모리 풀
     private GameObject[] BombArray;  // 메모리 풀과 연동하여 사용할 미사일 배열
+
 
     // 게임이 종료되면 자동으로 호출되는 함수
     private void OnApplicationQuit()
     {
         // 메모리 풀을 비웁니다.
         MPool.Dispose();
-    }
 
+    }
+    private void OnTriggerEnter(Collider other)
+    {
+        if (other.tag == "item_bomb")
+        {
+            MPool.Create(PlayerBomb, ++count);
+        }
+    }
     void Start()
     {
         // 처음에 폭탄을 발사할 수 있도록 제어변수를 true로 설정
@@ -32,19 +39,43 @@ public class Player_Fire2 : MonoBehaviour
         MPool.Create(PlayerBomb, BombMaxPool);
         // 배열도 초기화 합니다.(이때 모든 값은 null이 됩니다.)
         BombArray = new GameObject[BombMaxPool];
+
     }
-    private void OnTriggerEnter(Collider other)
-    {
-        if (other.tag == "item_bomb")
-        {
-            MPool.Create(PlayerBomb, ++count);
-        }
-    }
+
     void Update()
     {
         // 매 프레임마다 미사일발사 함수를 체크한다.
         playerFire2();
     }
+
+
+    private void OnGUI()
+    {
+        //스타일
+
+        GUIStyle style = new GUIStyle();
+
+        //폰트크기
+
+        style.fontSize = 60;
+        style.normal.textColor = Color.white;
+
+        GUILayout.BeginArea(new Rect(30, 1800, Screen.width, Screen.height));
+        GUILayout.BeginVertical();
+        GUILayout.Space(10);
+        GUILayout.BeginHorizontal();
+        GUILayout.Space(15);
+
+        string bomb = "Bomb : ";
+        bomb += count.ToString();
+        GUILayout.Label(bomb, style);
+        GUILayout.FlexibleSpace();
+        GUILayout.EndHorizontal();
+        GUILayout.FlexibleSpace();
+        GUILayout.EndVertical();
+        GUILayout.EndArea();
+    }
+
 
     // 미사일을 발사하는 함수
     private void playerFire2()
@@ -73,6 +104,7 @@ public class Player_Fire2 : MonoBehaviour
                         // 해당 폭탄의 위치를 미사일 발사지점으로 맞춘다.
                         BombArray[i].transform.position = BombLocation.transform.position;
                         // 발사 후에 for문을 바로 빠져나간다.
+
                         break;
                     }
                 }

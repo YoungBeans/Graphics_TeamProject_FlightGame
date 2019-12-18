@@ -30,10 +30,10 @@ public class Item_drop : MonoBehaviour
             {
                 item_drop();
             }
-            //if (Random.Range(0, 100) <= 5)
-            //{
+            if (Random.Range(0, 100) <= 5)
+            {
                 item_drop_bomb();
-            //}
+            }
         }
     }
 
