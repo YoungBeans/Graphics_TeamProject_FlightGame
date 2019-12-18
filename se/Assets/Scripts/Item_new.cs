@@ -29,6 +29,7 @@ public class Item_new : MonoBehaviour
         if (other.tag == "Player")
         {
             Instantiate(party, transform.position, transform.rotation);
+            scoreManager.score += 500;
             Destroy(gameObject);
         }
     }

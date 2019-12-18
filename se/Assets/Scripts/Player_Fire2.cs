@@ -10,6 +10,7 @@ public class Player_Fire2 : MonoBehaviour
     private bool FireState;             // 폭탄 발사 속도를 제어할 변수
 
     public int BombMaxPool;          // 메모리 풀에 저장할 미사일 개수
+    public int count;
     private MemoryPool MPool;           // 메모리 풀
     private GameObject[] BombArray;  // 메모리 풀과 연동하여 사용할 미사일 배열
 
@@ -32,7 +33,13 @@ public class Player_Fire2 : MonoBehaviour
         // 배열도 초기화 합니다.(이때 모든 값은 null이 됩니다.)
         BombArray = new GameObject[BombMaxPool];
     }
-
+    private void OnTriggerEnter(Collider other)
+    {
+        if (other.tag == "item_bomb")
+        {
+            MPool.Create(PlayerBomb, ++count);
+        }
+    }
     void Update()
     {
         // 매 프레임마다 미사일발사 함수를 체크한다.
@@ -48,6 +55,10 @@ public class Player_Fire2 : MonoBehaviour
             // 키보드의 "S"를 누르면
             if (Input.GetKey(KeyCode.S))
             {
+                if (count > 0)
+                {
+                    count--;
+                }
                 // 코루틴 "FireCycleControl"이 실행되며
                 StartCoroutine(FireCycleControl());
 

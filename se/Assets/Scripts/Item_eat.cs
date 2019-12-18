@@ -14,6 +14,9 @@ public class Item_eat : MonoBehaviour
     private void OnTriggerEnter(Collider other)
     {
         if (other.tag == "Item_level")
+        {
             Instantiate(party, transform.position, transform.rotation);
+            scoreManager.score += 500;
+        }
     }
 }
