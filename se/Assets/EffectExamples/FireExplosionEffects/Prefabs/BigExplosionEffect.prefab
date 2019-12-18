@@ -14005,9 +14005,11 @@ GameObject:
   - component: {fileID: 4000010212820824}
   - component: {fileID: 198000012777718758}
   - component: {fileID: 199000010553669322}
+  - component: {fileID: 9013914636463029497}
+  - component: {fileID: 8351855019970251624}
   m_Layer: 0
   m_Name: BigExplosionEffect
-  m_TagString: Untagged
+  m_TagString: Player Bomb
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -14456,7 +14458,7 @@ ParticleSystem:
         m_RotationOrder: 0
     randomizeRotationDirection: 1
     maxNumParticles: 1000
-    size3D: 0
+    size3D: 1
     rotation3D: 0
     gravityModifier:
       serializedVersion: 2
@@ -18602,6 +18604,31 @@ ParticleSystemRenderer:
   m_Mesh2: {fileID: 0}
   m_Mesh3: {fileID: 0}
   m_MaskInteraction: 0
+--- !u!135 &9013914636463029497
+SphereCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1000011797152326}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Radius: 2.064541
+  m_Center: {x: 0.031600233, y: -0.017025474, z: 1.0639923}
+--- !u!114 &8351855019970251624
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1000011797152326}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d8ee731896d0fab4593d39b2fe2cd422, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1000012348499044
 GameObject:
   m_ObjectHideFlags: 0

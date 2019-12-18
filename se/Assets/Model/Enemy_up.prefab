@@ -140,7 +140,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5b377348dd1440143b54629430c11d33, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  ParticleFXExplosion: {fileID: 100000, guid: 9473bf090aaa04164967cdceab413088, type: 3}
+  ParticleFXExplosion: {fileID: 1845955007268882, guid: 67a684e320da6e7439421a07e3fa265c,
+    type: 3}
 --- !u!1001 &70134183968223932
 PrefabInstance:
   m_ObjectHideFlags: 0
