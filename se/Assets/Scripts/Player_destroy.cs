@@ -6,7 +6,7 @@ public class Player_destroy : MonoBehaviour
 {
     public GameObject ParticleFXExplosion;
     public int maxHealth = 3;
-    int nowHealth;
+    public int nowHealth;
 
     // Start is called before the first frame update
 
