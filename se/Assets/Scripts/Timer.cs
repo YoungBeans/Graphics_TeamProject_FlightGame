@@ -6,10 +6,11 @@ using UnityEngine.UI;
 public class Timer : MonoBehaviour
 {
     public float LimitTime;
-    public Text text_Timer = GameObject.Find("Time").GetComponent<Text>();
+    public Text text_Timer;
 
     void Start()
     {
+        text_Timer = GameObject.Find("Timer").GetComponent<Text>();
     }
 
     // Update is called once per frame

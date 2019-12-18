@@ -6,10 +6,11 @@ using UnityEngine.UI;
 public class scoreManager : MonoBehaviour
 {
     public static int score;
-    public Text text = GameObject.Find("score").GetComponent<Text>();
+    public Text text;
 
     void Start()
-    {        
+    {
+        text = GameObject.Find("score").GetComponent<Text>();
     }
 
     // Update is called once per frame

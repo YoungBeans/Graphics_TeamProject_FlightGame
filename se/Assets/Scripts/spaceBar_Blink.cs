@@ -6,10 +6,11 @@ using UnityEngine.EventSystems;
 
 public class spaceBar_Blink : MonoBehaviour
 {
-    public Text flashingText = GameObject.Find("Text").GetComponent<Text>();
+    public Text flashingText;
 
     void Start()
     {
+        flashingText = GameObject.Find("Text").GetComponent<Text>();
         StartCoroutine(BlinkText());
     }
 
