@@ -17,7 +17,7 @@ public class GameOverManager : MonoBehaviour
     void Update()
     {
         timer += Time.deltaTime;
-        if ((playerhealth.nowHealth <= 0) || Mathf.Round(timer) == 60)
+        if ((playerhealth.nowHealth <= 0) || Mathf.Round(timer) == 180)
         {
             anim.SetTrigger("GameOver");
         }

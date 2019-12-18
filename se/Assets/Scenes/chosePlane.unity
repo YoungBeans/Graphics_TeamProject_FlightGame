@@ -124,6 +124,7 @@ GameObject:
   - component: {fileID: 933561}
   - component: {fileID: 933560}
   - component: {fileID: 933559}
+  - component: {fileID: 933563}
   m_Layer: 5
   m_Name: playBtn
   m_TagString: Untagged
@@ -211,6 +212,22 @@ RectTransform:
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0, y: 0}
+--- !u!114 &933563
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 933558}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c40c458f74acf794fa44bd1b1c6e5631, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  camArr:
+  - {fileID: 2082528086}
+  - {fileID: 113925593}
+  - {fileID: 1565459037}
 --- !u!1 &113925591
 GameObject:
   m_ObjectHideFlags: 0
@@ -244,7 +261,7 @@ Camera:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 113925591}
-  m_Enabled: 1
+  m_Enabled: 0
   serializedVersion: 2
   m_ClearFlags: 1
   m_BackGroundColor: {r: 0.19215687, g: 0.3019608, b: 0.4745098, a: 0}
@@ -975,7 +992,7 @@ Camera:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1565459035}
-  m_Enabled: 1
+  m_Enabled: 0
   serializedVersion: 2
   m_ClearFlags: 1
   m_BackGroundColor: {r: 0.19215687, g: 0.3019608, b: 0.4745098, a: 0}
@@ -1106,6 +1123,11 @@ PrefabInstance:
       propertyPath: m_LocalScale.x
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 4400975152145126441, guid: f3e3b64a743a3844e919be850b4be886,
+        type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: f4515b3c7e536f347a12e8ed4566741c, type: 2}
     m_RemovedComponents:
     - {fileID: 592440125013993380, guid: f3e3b64a743a3844e919be850b4be886, type: 3}
     - {fileID: 1720450328, guid: f3e3b64a743a3844e919be850b4be886, type: 3}
@@ -1278,7 +1300,7 @@ Camera:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2082528084}
-  m_Enabled: 0
+  m_Enabled: 1
   serializedVersion: 2
   m_ClearFlags: 1
   m_BackGroundColor: {r: 0.19215687, g: 0.3019608, b: 0.4745098, a: 0}
