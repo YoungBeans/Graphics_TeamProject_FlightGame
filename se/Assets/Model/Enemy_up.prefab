@@ -137,7 +137,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9dc57e4746fd5a74fae454d1efb66137, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  CharactorMoveSpeed: 90
+  CharactorMoveSpeed: 100
 --- !u!114 &1484642717047309208
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -159,6 +159,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 5376404907723003002}
     m_Modifications:
+    - target: {fileID: 1807896483295724, guid: dd5cc5afc7a95424ba3a817d78c1642f, type: 3}
+      propertyPath: m_Name
+      value: Enemy_up
+      objectReference: {fileID: 0}
     - target: {fileID: 4989394111098338, guid: dd5cc5afc7a95424ba3a817d78c1642f, type: 3}
       propertyPath: m_LocalPosition.x
       value: 0
@@ -214,10 +218,6 @@ PrefabInstance:
     - target: {fileID: 4989394111098338, guid: dd5cc5afc7a95424ba3a817d78c1642f, type: 3}
       propertyPath: m_LocalScale.z
       value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 1807896483295724, guid: dd5cc5afc7a95424ba3a817d78c1642f, type: 3}
-      propertyPath: m_Name
-      value: Enemy_up
       objectReference: {fileID: 0}
     - target: {fileID: 4867963081317810, guid: dd5cc5afc7a95424ba3a817d78c1642f, type: 3}
       propertyPath: m_LocalScale.x
