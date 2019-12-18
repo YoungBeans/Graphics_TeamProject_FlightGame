@@ -7,8 +7,7 @@ public class Player_destroy : MonoBehaviour
     public GameObject ParticleFXExplosion;
     public int maxHealth = 3;
     int nowHealth;
-    bool isDie = false;
-    bool isUnBeatTime = false;
+
     // Start is called before the first frame update
 
 
@@ -21,13 +20,11 @@ public class Player_destroy : MonoBehaviour
     void Update()
     {
         if (nowHealth == 0)
-            if (!isDie)
-                Die();
+            Die();
     }
-    
+
     void Die()
     {
-        isDie = true;
         Debug.Log("주인공 파괴");
         Instantiate(ParticleFXExplosion, this.transform.position, Quaternion.identity); //폭발 이펙트를 생성합니다
         Destroy(gameObject);
@@ -37,21 +34,20 @@ public class Player_destroy : MonoBehaviour
     IEnumerator UnBeatTime()
     {
         int countTime = 0;
-        Renderer renderer = GetComponent<Renderer>();
-        Color c = renderer.material.color;
-        while (countTime < 10)
+
+        Renderer renderer = transform.Find("Body").gameObject.GetComponent<Renderer>();
+
+        while (countTime < 15)
         {
             if (countTime % 2 == 0)
-                c.a = 10.0f;
+                renderer.enabled = true;
             else
-                c.a = 0f;
-            renderer.material.color = c;
+                renderer.enabled = false;
             yield return new WaitForSeconds(0.2f);
             countTime++;
         }
-        c.a = 10.0f;
-
-        isUnBeatTime = false;
+        renderer.enabled = true;
+        GetComponent<Collider>().enabled = true;
         yield return null;
     }
 
@@ -88,9 +84,9 @@ public class Player_destroy : MonoBehaviour
         if (other.CompareTag("Enemy") || other.CompareTag("Enemy Missile"))
         {
             nowHealth--;
-            if (nowHealth > 1)
+            if (nowHealth >= 1)
             {
-                isUnBeatTime = true;
+                GetComponent<Collider>().enabled = false;
                 StartCoroutine("UnBeatTime");
             }
             /*

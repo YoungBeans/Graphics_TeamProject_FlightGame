@@ -16,13 +16,17 @@ public class MissileMove : MonoBehaviour
         {
            this.GetComponent<Collider>().enabled = false;
         }*/
+        if (transform.position.y < -1000f | transform.position.y > 1000f | transform.position.x > 600f | transform.position.x < -600f)
+        {
+            Destroy(gameObject);
+        }
     }
     private void OnTriggerEnter(Collider other)
     {
         if (other.CompareTag("Player"))
         {
-            Debug.Log("기체충돌");
-            this.GetComponent<Collider>().enabled = false;
+            //this.GetComponent<Collider>().enabled = false;
+            Destroy(gameObject);
         }
     }
 }

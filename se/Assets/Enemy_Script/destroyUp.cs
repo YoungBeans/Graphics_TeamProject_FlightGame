@@ -23,11 +23,12 @@ public class destroyUp : MonoBehaviour
 
     private void OnTriggerEnter(Collider other)
     {
+        /*
         if (other)
             if (gameObject.transform.position.y < -1000f)
             {
                 Destroy(gameObject);
-            }
+            }*/
         if (other.CompareTag("Player") || other.CompareTag("Player Missile") || other.CompareTag("Player Bomb"))
         {
             Debug.Log("기체 파괴");

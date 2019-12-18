@@ -5713,12 +5713,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 86d7b828ecc17ce46a2f12782ee01e38, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  MissileObject: {fileID: 272972204140286598, guid: 675d2a95bec831c44bfdac4a171a5ecb,
+  PlayerMissile: {fileID: 272972204140286598, guid: 675d2a95bec831c44bfdac4a171a5ecb,
     type: 3}
   MissileLocation: {fileID: 1074071255877542150}
-  MissileMaximumPool: 10
-  FireRateTime: 3
-  ParticleFXExplosion: {fileID: 0}
+  FireDelay: 2
 --- !u!114 &885294346114832682
 MonoBehaviour:
   m_ObjectHideFlags: 0
