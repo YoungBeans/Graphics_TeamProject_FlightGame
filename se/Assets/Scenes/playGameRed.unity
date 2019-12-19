@@ -630,10 +630,11 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 1720450330, guid: f3e3b64a743a3844e919be850b4be886, type: 3}
-      propertyPath: count
-      value: 3
-      objectReference: {fileID: 0}
+    - target: {fileID: 4400975152145126441, guid: f3e3b64a743a3844e919be850b4be886,
+        type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: 3574d5733ac60b941b175932e0a1aa2e, type: 2}
     - target: {fileID: 592440125013993380, guid: f3e3b64a743a3844e919be850b4be886,
         type: 3}
       propertyPath: m_Enabled
@@ -643,11 +644,24 @@ PrefabInstance:
       propertyPath: Speed
       value: 300
       objectReference: {fileID: 0}
-    - target: {fileID: 4400975152145126441, guid: f3e3b64a743a3844e919be850b4be886,
+    - target: {fileID: 1720450330, guid: f3e3b64a743a3844e919be850b4be886, type: 3}
+      propertyPath: count
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 33607749541355114, guid: f3e3b64a743a3844e919be850b4be886,
         type: 3}
-      propertyPath: m_Materials.Array.data[0]
+      propertyPath: m_Mesh
       value: 
-      objectReference: {fileID: 2100000, guid: 3574d5733ac60b941b175932e0a1aa2e, type: 2}
+      objectReference: {fileID: 4300000, guid: e0f90ad78680d6145b082ac69f7fc504, type: 3}
+    - target: {fileID: 1720450327, guid: f3e3b64a743a3844e919be850b4be886, type: 3}
+      propertyPath: m_Mesh
+      value: 
+      objectReference: {fileID: 4300000, guid: e0f90ad78680d6145b082ac69f7fc504, type: 3}
+    - target: {fileID: 4413386789728435263, guid: f3e3b64a743a3844e919be850b4be886,
+        type: 3}
+      propertyPath: m_Mesh
+      value: 
+      objectReference: {fileID: 4300008, guid: e0f90ad78680d6145b082ac69f7fc504, type: 3}
     m_RemovedComponents:
     - {fileID: 1843068327138316742, guid: f3e3b64a743a3844e919be850b4be886, type: 3}
     - {fileID: 592440125013993380, guid: f3e3b64a743a3844e919be850b4be886, type: 3}
